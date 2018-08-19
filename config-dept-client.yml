@@ -1,0 +1,26 @@
+﻿spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8001
+  
+spring:
+  profiles: dev
+  application:
+    name: microservice-dept
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microservice-dept8001
+    prefer-ip-address: true     #访问路径可以显示IP地址
+    
+info: 
+  app.name: mu-microservicecloud
+  company.name: www.mu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
